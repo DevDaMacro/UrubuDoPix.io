@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabéns Gmaster</title>
+    <style>
+        /* Reset básico para a página */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(131,58,180);
+            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(230,83,83,1) 50%, rgba(252,176,69,1) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Estilo da mensagem */
+        .mensagem {
+            font-size: 2rem;
+            color: #fff;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            animation: pular 2s ease-out forwards;
+        }
+
+        /* Animação do "pulo" */
+        @keyframes pular {
+            0% {
+                transform: translate(-50%, -50%) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                transform: translate(-50%, -60%) scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .mensagem {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mensagem de Parabéns -->
+    <div class="mensagem" id="mensagem">
+        Parabéns Gmaster, você ganhou um Pix de R$ 50,00!
+    </div>
+
+    <!-- Script para exibir a mensagem ao carregar -->
+    <script>
+        window.onload = () => {
+            const mensagem = document.getElementById("mensagem");
+            mensagem.style.opacity = 1; // Torna a mensagem visível
+        };
+    </script>
+</body>
+</html>
